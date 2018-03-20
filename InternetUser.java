@@ -20,24 +20,33 @@ class InternetUser {
 	 
 	 InternetUser(String userName, String userIp){
 		 
-		setUserData(userName, userIp);
+		setIp(userIp);
+		setName(userName);
 	 }
 	 //Mutator for each member.
-	 public void setUserData (String userName, String userIp) {
-		 if (isValidName(userName) == true) {
-			 this.name = userName;
-		 }
-		else {
-			this.name =  DEFAULT_NAME;
-		 }
-		 if (isValidIp(userIp) == true) {
+	 public boolean setIp (String userIp) {
+		 boolean isSetIp = false;
+		 if (isValidIp(userIp)) {
 			 this.ip = userIp;
+			 isSetIp = true;
 		 }
 		 else {
 			 this.ip = DEFAULT_IP;
 		 }
+		 return isSetIp;
 	 }
 	 
+	 public boolean setName (String userName) {
+		 boolean isSetName = false;
+		 if (isValidName(userName)) {
+			 this.name = userName;
+			 isSetName = true;
+		 }
+		else {
+			this.name =  DEFAULT_NAME;
+		 }
+		 return isSetName;
+	 }
 	 /* private static validation helpers to filter client parameters.  
 	  * These will support our public methods and we should only test lengths here*/
 	 private static boolean isValidName(String userName) {
@@ -56,16 +65,16 @@ class InternetUser {
 	 }
 	 
 	 //Accessor for each member.
-	 public String getUserName(){
+	 public String getName(){
 		 return name;
 	 }
-	 public String getUserIp(){
+	 public String getIp(){
 		 return ip;
 	 }
 	 
 	 //a toString() method that provides a nicely formatted return string for potential screen I/O
 	public String toString() {
-		String result = "NAME:" + getUserName() +"\nIP address: ";
+		String result = "NAME:" + getName() +"\nIP address: ";
 		for(int k = 0; k < ip.length(); k++)
 	         if (Character.isDigit(ip.charAt(k))||ip.charAt(k)=='.') {
 	            result = result +ip.charAt(k);
@@ -73,10 +82,6 @@ class InternetUser {
 	      return result;
 		
 		
-//	      result = "(" + areaCode + ")"
-//	         + number.substring(0,3) + "-"
-//	         + number.substring(3,7);
-//	      return result;
 	}
 	
 	

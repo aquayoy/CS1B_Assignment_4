@@ -42,14 +42,15 @@ public class Foothill {
 		communicator7.setPrimes(41, 43);
 		System.out.println(communicator7.toString()+"\n" );
 		
-		user4.setUserData("aa", "00.89.546.1");
+		user4.setIp("00.89.546.1");
+		user4.setName("aa");
 		System.out.println(user4.toString() );
 
 		System.out.println("\n\n-----------accessors Testing-----------");
 		System.out.println("communicator7's public key: "+communicator7.getPublicKey());
 		System.out.println("communicator7's private key: "+communicator7.getPrivateKey());
-		System.out.println("communicator7's name: "+communicator7.getUserName());
-		System.out.println("communicator7's ip: "+communicator7.getUserIp());
+		System.out.println("communicator7's name: "+communicator7.getName());
+		System.out.println("communicator7's ip: "+communicator7.getIp());
 		
 		System.out.println("\n\n***************Option B1***************");
 
@@ -73,18 +74,10 @@ public class Foothill {
 		 */
 		// 3 more times test for empty stack
 		for (int i=0; i<8; i++ ) {
-			if ( (current = iustk.popIu()) != IuStack.STACK_EMPTY)
+			if ( (current = iustk.popIu()) != iustk.STACK_EMPTY)
 	            System.out.println(current+"\n");
 		}
 		
-//		for (int i=0; i<5; i++ ) {
-//			if ( ( iustk.popIu()) != IuStack.STACK_EMPTY)
-//	            System.out.println(iustk.popIu());
-//		}
 	}
-	
-	
-	
-	
-	
+		
 }
