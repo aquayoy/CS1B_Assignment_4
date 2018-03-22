@@ -4,12 +4,12 @@
 public class Foothill {
 	public static void main(String[] args) {
 
-		System.out.println("-----------Base Class Testing-----------");
+		System.out.println("Base Class Testing ***********************");
 
 		InternetUser user1 = new InternetUser();
 		InternetUser user2 = new InternetUser("Foothill", "75.75.75.75");
 		InternetUser user3 = new InternetUser("default", "1122334455667788");
-		InternetUser user4 = new InternetUser("a", "100.2.300.45");
+		InternetUser user4 = new InternetUser("a", "0.0.0.0");
 
 		System.out.println(user1.toString() + "\n");
 		System.out.println(user2.toString() + "\n");
